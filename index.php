@@ -43,14 +43,14 @@ include("connect.php");
             $search_query = $_GET['query'];
         
         
-            $sql = "SELECT * FROM product WHERE description LIKE '%$search_query%'";
+            $sql = "SELECT product_id,product_name, product_image, price, quantity FROM product WHERE description LIKE '%$search_query%'";
             $result = $connect->query($sql);
         
             if ($result->num_rows > 0) {
                 echo "<h2>Search Results:</h2>";
                 while ($row = $result->fetch_assoc()) {
                     echo '<div class="product-container">';
-                    echo '<h2><a href="product.php">' . $row['product_name'] . '</a></h2>';
+                    echo '<h2><a href="product.php?product_id=' . $row['product_id'] . '">' . $row['product_name'] . '</a></h2>';
                     echo '<img src="' . $row['product_image'] . '" alt="Product Image">';
                     echo '<p>Price: $' . $row['price'] . '</p>';
                     echo '<p>Quantity: ' . $row['quantity'] . '</p>';
@@ -62,14 +62,14 @@ include("connect.php");
         }
                     else{
                 
-                    $query = "SELECT product_name, product_image, price, quantity, description FROM product ORDER BY date DESC";
+            $query = "SELECT product_id,product_name, product_image, price, quantity FROM product ORDER BY date DESC";
             $result = $connect->query($query);
 
             // Check if there are any products in the database
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
                     echo '<div class="product-container">';
-                    echo '<h2><a href="product.php">' . $row['product_name'] . '</a></h2>';
+                    echo '<h2><a href="product.php?product_id=' . $row['product_id'] . '">' . $row['product_name'] . '</a></h2>';                  
                     echo '<img src="' . $row['product_image'] . '" alt="Product Image">';
                     echo '<p>Price: $' . $row['price'] . '</p>';
                     echo '<p>Quantity: ' . $row['quantity'] . '</p>';

@@ -1,10 +1,5 @@
 <?php
 include('connect.php'); 
-if (!$connect) {
-    die("Error: Database connection not established.");
-} else {
-    echo "Database connection successful.";  
-}
 
 $firstname = $_POST['firstname'];
 $lastname = $_POST['lastname'];
