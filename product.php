@@ -73,9 +73,13 @@ session_start();
                         echo '</form>';
                     }
                     else{
-              echo '  ';          
-              echo '<button><a href="buy.php?product_id=' . $row['product_id'] . '">Buy Now</button></a>'; 
-                }
+              echo '<form method="post" action="buy.php">';
+              echo ' <label for="quantity">Quantity:</label>';
+              echo '<input type="number" name="quantity" id="quantity" min="1" max="' . $row['quantity'] . '" required>';
+              echo '<input type="hidden" name="product_id" value="' . $row['product_id'] . '">';
+              echo '<input type="submit" name="buy_product" value="Buy">';
+              echo '</form>';
+                }    
             }
                 else{
                     echo '<button><a href="login.php">Login To Buy</button></a>';
