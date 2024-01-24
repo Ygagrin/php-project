@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $targetFilePath = $uploadFolder . $fileName;
             if (move_uploaded_file($product_image['tmp_name'], $targetFilePath)) {
 
-                // Insert the file path into the database
+                //make if statment . if the product mawjod bl db bzeed l quanity (bejma3 old quantity m3 new q) product byet7dad bl image wl price wl seller_email eza haw nafs l shee bzed quan else b3nmel new one
                 $query = "INSERT INTO product (product_name, price, description, quantity, date, seller_email, product_image) 
                           VALUES (?, ?, ?, ?, ?, ?, ?)";
                 $stmt = $connect->prepare($query);
