@@ -17,12 +17,12 @@ session_start();
             <div class="navdiv">
                 <div class="logo"> <a href="index.php"><img src="pictures/icon3.ico" alt="logo"></a> </div>
                     <ul>
-                        <li><a href="index.php">home</a></li>
-                        <li><a href="about.html">about</a></li>
-                    </ul>       
-                    <ul>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                   
                     <?php    
                     if (isset($_SESSION['firstname']) && isset($_SESSION['lastname'] )&& ( $_SESSION['email'] )) {
+                            echo' <li><a href="orders.php">My Orders</a></li></ul><ul>';
                             echo '<li><div class="name">' . $_SESSION['firstname'].' '.$_SESSION['lastname'] . '</div>';
                             echo '<button><a href="sell.php">Sell</a></button>';
                             echo '<button><a href="logout.php">Logout</a></button></li>';
@@ -73,11 +73,12 @@ session_start();
                         echo '</form>';
                     }
                     else{
+              echo '  ';          
               echo '<button><a href="buy.php?product_id=' . $row['product_id'] . '">Buy Now</button></a>'; 
                 }
             }
                 else{
-                    echo '<button><a href="login.php">To Buy login </button></a>';
+                    echo '<button><a href="login.php">Login To Buy</button></a>';
                 }
             } else {
                 echo "Product not found.";

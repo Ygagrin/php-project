@@ -21,10 +21,11 @@ include("connect.php");
                         <input type="submit" value="Search">
                 </form>
                     <ul>
-                        <li><a href="index.php">home</a></li>
-                        <li><a href="about.html">about</a></li>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="about.html">About</a></li>
                         <?php
                          if (isset($_SESSION['firstname']) && isset($_SESSION['lastname'] )&& ( $_SESSION['email'] )) {
+                            echo'<li><a href="orders.php">My Orders</a></li>';
                             echo '<li><div class="name">' . $_SESSION['firstname'].' '.$_SESSION['lastname'] . '</div>';
                             echo '<button><a href="sell.php">Sell</a></button>';
                             echo '<button><a href="logout.php">Logout</a></button></li>';
