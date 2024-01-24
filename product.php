@@ -62,6 +62,7 @@ session_start();
                 echo '<img src="' . $row['product_image'] . '" alt="Product Image">';
                 echo '<p>Price: $' . $row['price'] . '</p>';
                 echo '<p>Quantity: ' . $row['quantity'] . '</p>';
+                echo '<p>Description: ' . $row['description'] . '</p>';
                 echo '</div>';
                 
                 if (isset($_SESSION['firstname']) && isset($_SESSION['lastname'] )&& isset( $_SESSION['email'] )){
