@@ -38,7 +38,7 @@ include("connect.php");
             <div class="nav-line"></div>
         </nav>
         <?php
-        if (isset($_GET['query'])) {
+        if (isset($_GET['query']) && !empty($_GET['query'])) {
 
             $search_query = $_GET['query'];
         
@@ -49,16 +49,19 @@ include("connect.php");
             if ($result->num_rows > 0) {
                 echo "<h2>Search Results:</h2>";
                 while ($row = $result->fetch_assoc()) {
-                    echo "<p>{$row['product_name']} - {$row['description']}</p>";
+                    echo '<div class="product-container">';
+                    echo '<h2><a href="product.php">' . $row['product_name'] . '</a></h2>';
+                    echo '<img src="' . $row['product_image'] . '" alt="Product Image">';
+                    echo '<p>Price: $' . $row['price'] . '</p>';
+                    echo '<p>Quantity: ' . $row['quantity'] . '</p>';
+                    echo '</div>';
                 }
             } else {
                 echo "<p>No results found for '{$search_query}'</p>";
             }
         }
-        ?>
-
-        <?php
-        
+                    else{
+                
                     $query = "SELECT product_name, product_image, price, quantity, description FROM product ORDER BY date DESC";
             $result = $connect->query($query);
 
@@ -66,17 +69,18 @@ include("connect.php");
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
                     echo '<div class="product-container">';
-                    echo '<h2>' . $row['product_name'] . '</h2>';
+                    echo '<h2><a href="product.php">' . $row['product_name'] . '</a></h2>';
                     echo '<img src="' . $row['product_image'] . '" alt="Product Image">';
                     echo '<p>Price: $' . $row['price'] . '</p>';
                     echo '<p>Quantity: ' . $row['quantity'] . '</p>';
-                    echo '<p>Description: ' . $row['description'] . '</p>';
                     echo '</div>';
                 }
             } else {
                 echo "No products found.";
             }
-            ?>
+        }   
+
+    ?>
 
 
         

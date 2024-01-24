@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 23, 2024 at 11:32 PM
+-- Generation Time: Jan 24, 2024 at 04:16 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `e-commerce`
 --
-CREATE DATABASE IF NOT EXISTS `e-commerce` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `e-commerce`;
 
 -- --------------------------------------------------------
 
@@ -29,28 +27,25 @@ USE `e-commerce`;
 -- Table structure for table `product`
 --
 
-CREATE TABLE IF NOT EXISTS `product` (
-  `product_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `product` (
+  `product_id` int(11) NOT NULL,
   `product_name` varchar(255) DEFAULT NULL,
   `price` decimal(10,2) DEFAULT NULL,
   `description` text DEFAULT NULL,
   `quantity` int(11) DEFAULT NULL,
   `date` date DEFAULT NULL,
   `seller_email` varchar(255) DEFAULT NULL,
-  `product_image` blob NOT NULL,
-  PRIMARY KEY (`product_id`),
-  KEY `seller_email` (`seller_email`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `product_image` varchar(225) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `product`
 --
 
 INSERT INTO `product` (`product_id`, `product_name`, `price`, `description`, `quantity`, `date`, `seller_email`, `product_image`) VALUES
-(1, 'car', 1.00, 'asdl', 1, '2024-01-23', 'husseinshamas@gmail.com', ''),
-(2, 'car', 1.00, 'cars', 1, '2024-01-23', 'haditermos@gmail.com', ''),
-(3, 'car', 1.00, 'car', 1, '2024-01-23', 'haditermos@gmail.com', ''),
-(4, 'car', 1.00, 'deqwe', 1, '2024-01-23', 'haditermos@gmail.com', '');
+(14, 'red toy car', 10.00, 'red toy car for kids , plastic one', 5, '2024-01-24', 'haditermos@gmail.com', '\\project\\uploaded/65b10f03c9395_car.png'),
+(15, 'lego technic', 40.00, 'lego technic car green lamborghini 9+ years', 5, '2024-01-24', 'haditermos@gmail.com', '\\project\\uploaded/65b110cda08b5_GoOnlineTools-image-downloader.png'),
+(16, 'lego technic', 40.00, 'lego technic car color yellow bugati 9+ years', 5, '2024-01-24', 'haditermos@gmail.com', '\\project\\uploaded/65b111d7828a0_GoOnlineTools-image-downloader.jpeg');
 
 -- --------------------------------------------------------
 
@@ -58,16 +53,14 @@ INSERT INTO `product` (`product_id`, `product_name`, `price`, `description`, `qu
 -- Table structure for table `registration`
 --
 
-CREATE TABLE IF NOT EXISTS `registration` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `registration` (
+  `id` int(11) NOT NULL,
   `firstname` varchar(20) NOT NULL,
   `lastname` varchar(20) NOT NULL,
   `number` bigint(8) NOT NULL,
   `email` varchar(30) NOT NULL,
-  `password` varchar(30) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `password` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `registration`
@@ -78,6 +71,40 @@ INSERT INTO `registration` (`id`, `firstname`, `lastname`, `number`, `email`, `p
 (11, 'hussein', 'shamas', 12312312, 'husseinshamas@gmail.com', 'husseinshamas'),
 (12, 'hadi', 'termos', 99999999, 'haditermos2@gmail.com', 'haditermos'),
 (13, 'hussein', 'shamas', 12345678, 'husseinshamas2@gmail.com', 'husseinshamas');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `product`
+--
+ALTER TABLE `product`
+  ADD PRIMARY KEY (`product_id`),
+  ADD KEY `seller_email` (`seller_email`);
+
+--
+-- Indexes for table `registration`
+--
+ALTER TABLE `registration`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `product`
+--
+ALTER TABLE `product`
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `registration`
+--
+ALTER TABLE `registration`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Constraints for dumped tables
