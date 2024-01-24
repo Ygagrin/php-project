@@ -56,6 +56,32 @@ include("connect.php");
             }
         }
         ?>
+
+        <?php
+        
+                    $query = "SELECT product_name, product_image, price, quantity, description FROM product ORDER BY date DESC";
+            $result = $connect->query($query);
+
+            // Check if there are any products in the database
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo '<div class="product-container">';
+                    echo '<h2>' . $row['product_name'] . '</h2>';
+                    echo '<img src="' . $row['product_image'] . '" alt="Product Image">';
+                    echo '<p>Price: $' . $row['price'] . '</p>';
+                    echo '<p>Quantity: ' . $row['quantity'] . '</p>';
+                    echo '<p>Description: ' . $row['description'] . '</p>';
+                    echo '</div>';
+                }
+            } else {
+                echo "No products found.";
+            }
+            ?>
+
+
         
     </body>
-</html>
+    </html>
+<?php
+$connect->close();
+?>

@@ -37,9 +37,14 @@ session_start();
             <input type="number" placeholder="Quantity" name="quantity" min="1" required>
             <input type="text" placeholder="Description" name="description" rows="4" required>
             <label for="product_image">Product image <5M</label>
-            <input type="file" name="product_image" accept="image/*" required>
+            <input type="file" name="product_image" accept=".jpg, .jpeg, .png" required>
             <input type="submit" value="Add Product">
         </form>
-
+        <?php
+        if (isset($_GET['message']) && $_GET['message'] == 1) {
+            $message="Uploaded Successfully!";
+            echo "<h3>$message</h3>";
+        }
+            ?>
 </body>
 </html>
