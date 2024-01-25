@@ -25,17 +25,20 @@
                     <input type="text" placeholder="Last Name" name="lastname" required>
                 </div>
                 <?php
-                if (isset($_GET['error']) && $_GET['error'] == 1) {
+              if (isset($_GET['error']) && $_GET['error'] == 1) {
                 $error_message="Invalid Number";
                 echo "<h3>$error_message</h3>";
                 }
-                if (isset($_GET['error']) && $_GET['error'] == 2) {
-                    $error_message="Choose Another Email";
-                    echo "<h3>$error_message</h3>";
-             }
-          ?>
+                ?>
+               
                 <div class="other"> 
                     <input type="tel" placeholder="Phone Number" name="number" required>
+                    <?php
+                       if (isset($_GET['error']) && $_GET['error'] == 2) {
+                        $error_message="Choose Another Email";
+                        echo "<h3>$error_message</h3>";
+                 }
+              ?>
                     <input type="email" placeholder="Email" name="email" required>
                     <input type="password" placeholder="password" name="password" required>
                 </div>

@@ -8,17 +8,17 @@ $email = strtolower($_POST['email']);
 $password = $_POST['password'];
 
 $emailquery="SELECT email FROM registration WHERE email = ?";
-$result=$connect->prepare($emailquery);
-$result->bind_param("s",$email);
-$result->execute();
-$result = $stmt->get_result();
-if ($result->num_rows === 0) {
-    header('location: createaccount.php?error=2');
+$emailstmt=$connect->prepare($emailquery);
+$emailstmt->bind_param("s",$email);
+$emailstmt->execute();
+$result = $emailstmt->get_result();
+if ($result->num_rows !== 0) {
+    header('location:createaccount.php?error=2');
     exit();
 }
 else{
 if (!is_numeric($number) || strlen($number) !== 8 ) {
-    header('location: createaccount.php?error=1');
+    header('location:createaccount.php?error=1');
     exit();
 }
 else{
