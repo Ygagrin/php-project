@@ -9,3 +9,60 @@
     width:10%;
     height: auto;
   }
+  .delete{
+    margin-top: 15%;
+    display: flex;
+    border-radius: 8px;
+    border: 2px solid;
+    width: 150px;
+    
+  }
+  .delete input{
+    font-weight: 600;
+  }
+  .delete input[type="submit"] {
+    background: linear-gradient(to right, #2ecc71, #3498db);
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .buy{
+    margin-top: 15%;
+    display: flex;
+    border-radius: 8px;
+    border: 2px solid;
+    width: 150px;
+    
+  }
+  .buy label{
+    font-weight: 600;
+    align-items: center;
+  }
+  .buy input{
+    font-weight: 600;
+  }
+  .buy input[type="submit"] {
+    background: linear-gradient(to right, #2ecc71, #3498db);
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+  }
+  
+.buy input[type="number"]{
+
+    width: 100%;
+    box-sizing: border-box;
+}
+a.log {
+  margin-top: 15%;
+  padding: 10px 15px;
+  display: flex;
+  border-radius: 8px;
+  width: 150px;
+  align-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #2ecc71, #3498db);
+}

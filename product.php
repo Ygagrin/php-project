@@ -63,28 +63,30 @@ session_start();
                 echo '<div class="items"><p>Price: $' . $row['price'] . '</p>';
                 echo '<p>Quantity: ' . $row['quantity'] . '</p>';
                 echo '<p>Description: ' . $row['description'] . '</p>';
-                echo '</div></div></a>';
+                echo '</div></a>';
                 
-                echo '</div>';
-                
+             
                 if (isset($_SESSION['firstname']) && isset($_SESSION['lastname'] )&& isset( $_SESSION['email'] )){
                     if($row['seller_email']== $_SESSION['email']){
-                        echo '<form method="post" action="">';
+                        echo '<form class="delete" method="post" action="">';
                         echo '<input type="hidden" name="product_id" value="' . $row['product_id'] . '">';
-                        echo '<input type="submit" name="delete_product" value="Delete">';
-                        echo '</form>';
+                        echo '<input type="submit"  name="delete_product" value="Delete">';
+                        echo '</form></div>';
+                        
                     }
                     else{
-              echo '<form method="post" action="buy.php">';
+              echo '<form method="post" class="buy" action="orders.php">';
               echo ' <label for="quantity">Quantity:</label>';
               echo '<input type="number" name="quantity" id="quantity" min="1" max="' . $row['quantity'] . '" required>';
               echo '<input type="hidden" name="product_id" value="' . $row['product_id'] . '">';
               echo '<input type="submit" name="buy_product" value="Buy">';
-              echo '</form>';
+              echo '</form></div>';
+              
                 }    
             }
                 else{
-                    echo '<button><a href="login.php">Login To Buy</button></a>';
+                    echo '<a class="log" href="login.php">Login To Buy</a></div>';
+                
                 }
             } else {
                 echo "Product not found.";
