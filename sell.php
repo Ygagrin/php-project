@@ -47,13 +47,8 @@ session_start();
 
             ?>
         </form>
+      
         <?php
-        if (isset($_GET['message']) && $_GET['message'] == 1) {
-            $message="Uploaded Successfully!";
-            echo "<h3>$message</h3>";
-        }
-
-
         //bdna n3mel hon my sells (bt3mel select mn db la 8rado seller_email)    fe y3mel delete change price ,quantity ...
         
             ?>

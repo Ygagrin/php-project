@@ -40,7 +40,8 @@
                  }
               ?>
                     <input type="email" placeholder="Email" name="email" required>
-                    <input type="password" placeholder="password" name="password" required>
+                    <input type="password" placeholder="Password" name="password" required>
+                    <input type="text" placeholder="Location" name="location" required>
                 </div>
                 <button type="submit" class="createbutton">Create account</button>
                 <button type="reset" class="createbutton">Reset</button>

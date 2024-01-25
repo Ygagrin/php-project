@@ -6,6 +6,8 @@ $lastname = $_POST['lastname'];
 $number = $_POST['number'];
 $email = strtolower($_POST['email']);
 $password = $_POST['password'];
+$location=$_POST['location'];
+
 
 $emailquery="SELECT email FROM registration WHERE email = ?";
 $emailstmt=$connect->prepare($emailquery);
@@ -23,9 +25,9 @@ if (!is_numeric($number) || strlen($number) !== 8 ) {
 }
 else{
     
-    $query = "INSERT INTO registration(firstname, lastname, number, email, password) VALUES (? ,? ,? ,? ,?)";
+    $query = "INSERT INTO registration(firstname, lastname, number, email, password,location) VALUES (? ,? ,? ,? ,?,?)";
     $stmt = $connect->prepare($query);
-        $stmt->bind_param("ssiss", $firstname, $lastname, $number, $email, $password);
+        $stmt->bind_param("ssisss", $firstname, $lastname, $number, $email, $password,$location);
 
         $stmt->execute();
         $stmt->close();

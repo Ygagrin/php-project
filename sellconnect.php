@@ -7,9 +7,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $price = $_POST['price'];
     $description = $_POST['description'];
     $quantity = $_POST['quantity'];
-    $date = date("Y-m-d");
+    $date = date("Y-m-d H:i:s");
     $imagemaxsize = 5 * 1024 * 1024;
     $uploadFolder = 'C:/xampp/htdocs/project/uploaded/'; 
+
+
 
     if (isset($_SESSION['email'])) {
         $seller_email = $_SESSION['email'];

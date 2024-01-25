@@ -57,6 +57,10 @@ session_start();
                 $stmt->execute();
             $result = $stmt->get_result();
             if ($row = $result->fetch_assoc()) {
+                $_SESSION['seller_email']=$row['seller_email'];
+                $_SESSION['price']=$row['price'];
+                $_SESSION['product']=$row['product_name'];
+
                 echo '<div class="product-container"><div class="right">';
                 echo '<h2>' . $row['product_name'] . '</h2>';
                 echo '<img class="imageproduct" src="' . $row['product_image'] . '" alt="Product Image"></div>';
