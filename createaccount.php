@@ -28,6 +28,10 @@
                 if (isset($_GET['error']) && $_GET['error'] == 1) {
                 $error_message="Invalid Number";
                 echo "<h3>$error_message</h3>";
+                }
+                if (isset($_GET['error']) && $_GET['error'] == 2) {
+                    $error_message="Choose Another Email";
+                    echo "<h3>$error_message</h3>";
              }
           ?>
                 <div class="other"> 
