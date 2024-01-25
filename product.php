@@ -57,12 +57,14 @@ session_start();
                 $stmt->execute();
             $result = $stmt->get_result();
             if ($row = $result->fetch_assoc()) {
-                echo '<div class="product-container">';
+                echo '<div class="product-container"><div class="right">';
                 echo '<h2>' . $row['product_name'] . '</h2>';
-                echo '<img src="' . $row['product_image'] . '" alt="Product Image">';
-                echo '<p>Price: $' . $row['price'] . '</p>';
+                echo '<img class="imageproduct" src="' . $row['product_image'] . '" alt="Product Image"></div>';
+                echo '<div class="items"><p>Price: $' . $row['price'] . '</p>';
                 echo '<p>Quantity: ' . $row['quantity'] . '</p>';
                 echo '<p>Description: ' . $row['description'] . '</p>';
+                echo '</div></div></a>';
+                
                 echo '</div>';
                 
                 if (isset($_SESSION['firstname']) && isset($_SESSION['lastname'] )&& isset( $_SESSION['email'] )){

@@ -89,6 +89,7 @@ ul a{
 
 
 .product-container {
+    background-color: #7fc5f3;
     display: flex;
     align-items: flex-start;
     border: 1px solid #3498db; 
@@ -115,12 +116,9 @@ form {
     align-items: flex-start; /* Align items to the left within the 'right' div */
 }
 
-.imageproduct img{
-  width:10%;
-  height: auto;
-}
 
 .items {
+  color: #000000;
   margin-left: 40px;
   margin-top: 50px;
   font-weight: 600;

@@ -1,0 +1,11 @@
+.imageproduct {
+    height: 150px; 
+    width: 150px;
+     
+      border-radius: 8px;
+      margin-top: 10px;
+  }
+  .imageproduct img{
+    width:10%;
+    height: auto;
+  }
