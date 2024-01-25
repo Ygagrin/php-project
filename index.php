@@ -17,7 +17,6 @@ include("connect.php");
             <div class="navdiv">
                 <div class="logo"> <a href="index.php"><img src="pictures/icon3.ico" alt="logo"><h2>PeerExchangePlace</h2></a> </div>
                 <form action="index.php" method="get">
-                        <label for="search">Search:</label>
                         <input type="text" id="search" name="query" placeholder="Enter your search term">
                         <input type="submit" value="Search">
                 </form>
