@@ -15,7 +15,7 @@ session_start();
 <nav class="navbar">
 <div class="nav-line"></div>
             <div class="navdiv">
-                <div class="logo"> <a href="index.php"><img src="pictures/icon3.ico" alt="logo"></a> </div>
+                <div class="logo"> <a href="index.php"><img src="pictures/icon3.ico" alt="logo"><h2>PeerExchangePlace</h2></a> </div>
                     <ul>
                         <li><a href="index.php">Home</a></li>
                         <li><a href="about.html">About</a></li>
@@ -27,7 +27,7 @@ session_start();
                             echo '<button><a href="sell.php">Sell</a></button>';
                             echo '<button><a href="logout.php">Logout</a></button></li>';
                          } else {
-                         echo '<li><button><a href="createaccount.html">Signup</a></button></li>';
+                         echo '<li><button><a href="createaccount.php">Signup</a></button></li>';
                          echo '<li><button><a href="login.php">Login</a></button></li>';
                         }
                        ?> 

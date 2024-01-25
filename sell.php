@@ -14,10 +14,10 @@ session_start();
 <nav class="navbar">
 <div class="nav-line"></div>
             <div class="navdiv">
-                <div class="logo"> <a href="index.php"><img src="pictures/icon3.ico" alt="logo"></a> </div>
+                <div class="logo"> <a href="index.php"><img src="pictures/icon3.ico" alt="logo"><h2>PeerExchangePlace</h2></a> </div>
                     <ul>
                         <li><a href="index.php">Home</a></li>
-                        <li><a href="about.html">A`bout</a></li>
+                        <li><a href="about.html">About</a></li>
 
                         <?php
                          if (isset($_SESSION['firstname']) && isset($_SESSION['lastname']) && ( $_SESSION['email'] )) {
@@ -39,12 +39,21 @@ session_start();
             <label for="product_image">Product image <5M</label>
             <input type="file" name="product_image" accept=".jpg, .jpeg, .png" required>
             <input type="submit" value="Add Product">
+            <?php
+        if (isset($_GET['message']) && $_GET['message'] == 1) {
+            $message="Uploaded Successfully!";
+            echo "<h3>$message</h3>";
+        }
+
+            ?>
         </form>
         <?php
         if (isset($_GET['message']) && $_GET['message'] == 1) {
             $message="Uploaded Successfully!";
             echo "<h3>$message</h3>";
         }
+
             ?>
+
 </body>
 </html>

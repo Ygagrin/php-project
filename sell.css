@@ -1,8 +1,45 @@
-        body{
-            background-color:#EEDC82;
-        }
-        h1 {
-            color:#BF4F51;
-           text-align: center;
-        }
-     
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: #333;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+input, label {
+    display: block;
+    margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"] {
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+input[type="submit"] {
+    background: linear-gradient(to right, #3498db, #2ecc71);
+    color: #fff;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+h3 {
+    text-align: center;
+    margin: 15px 0;
+    color: #27ae60;
+}

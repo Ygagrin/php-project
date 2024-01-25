@@ -11,7 +11,8 @@ if (isset($_POST['product_id']) && !empty($_POST['product_id'])) {
         $stmt->bind_param("ii",$quantity, $product_id);
         $stmt->execute();
 // instert into (create the table 1st) orders what is the order product_name quantity price seller_email buyer_email paymentmethod location date
-        header("location:orders.php");
+        echo $_SESSION['price'];
+      //  header("location:orders.php");
 
     }
     else{

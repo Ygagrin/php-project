@@ -8,13 +8,14 @@ include("connect.php");
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="search.css">
         <title>home</title>
     </head>
     <body>
         <nav class="navbar">
         <div class="nav-line"></div>
             <div class="navdiv">
-                <div class="logo"> <a href="index.php"><img src="pictures/icon3.ico" alt="logo"></a> </div>
+                <div class="logo"> <a href="index.php"><img src="pictures/icon3.ico" alt="logo"><h2>PeerExchangePlace</h2></a> </div>
                 <form action="index.php" method="get">
                         <label for="search">Search:</label>
                         <input type="text" id="search" name="query" placeholder="Enter your search term">
@@ -30,7 +31,7 @@ include("connect.php");
                             echo '<button><a href="sell.php">Sell</a></button>';
                             echo '<button><a href="logout.php">Logout</a></button></li>';
                          } else {
-                         echo '<li><button><a href="createaccount.html">Signup</a></button></li>';
+                         echo '<li><button><a href="createaccount.php">Signup</a></button></li>';
                          echo '<li><button><a href="login.php">Login</a></button></li>';
                         }
                         ?>

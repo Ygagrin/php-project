@@ -1,16 +1,50 @@
 *{
   text-decoration: none;
 }
+body{
+  font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+.nav-line {
+  flex: 1;
+  height: 1px;
+  background-color: #fff;
+}
+
 .navbar{
-  background-color: #E3DAC9;
+  background: linear-gradient(to right, #3498db, #2ecc71);
+  color: #fff;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 .navdiv{
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+h2 a{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  margin: 0;
+  text-decoration: none;
+  color: black;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.logo h2 {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
 img{
-  margin: 10px 10px 10px 10px;
+  margin-top: 10px;
+  margin-left: 10px;
   width: 80px;
   height: 80px;
 }
@@ -18,14 +52,22 @@ img{
   font-weight: 600;
   font-size: 20px;
 }
+
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
 ul{
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
+  display: flex;
 }
 li{
-  margin-top: 20px;
+  margin-top: 10px;
   float: left;
   margin-right:  10px;
 }
@@ -36,7 +78,7 @@ ul button{
 }
 ul a{
   text-decoration: none;
-  color: rgb(0, 55, 150);
+  color: #e74c3c ;
   font-weight: 600;
   font-size: 20px;  
 }

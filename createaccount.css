@@ -12,6 +12,11 @@ body {
   min-height: 100vh;
   background: url(pictures/shopping2.jpg) no-repeat center / cover;
 }
+.creatingbox h3{
+font-size: 22px;
+    text-align: center;
+    color: rgb(255, 0, 0);
+  }
 
 .logo {
   order: 1;
@@ -28,7 +33,6 @@ body {
   align-items: center;
 }
 
-
 .logo a {
   text-decoration: none;
   color: white;
@@ -38,7 +42,7 @@ body {
 
 .creatingbox {
   width: 500px;
-  height: 530px;
+  height: 550px;
   background-color: transparent;
   border: 2px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);

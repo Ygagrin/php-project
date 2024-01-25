@@ -22,7 +22,7 @@
             </div>     
             <button type="submit" class="logbutton">Login</button>
             <div class="createaccount">
-                <p>Don't have account yet? <a href="createaccount.html">Create account</a></p>
+                <p>Don't have account yet? <a href="createaccount.php">Create account</a></p>
             </div>
         </form>
         <?php
