@@ -5,9 +5,16 @@
     border-radius: 5px;
     width: 250px; 
 }
-
+.imageproduct {
+    height: 100px; 
+    width: 100px;
+     
+      border-radius: 8px;
+      margin-top: 10px;
+    
+  }
 input[type="submit"] {
-    background: linear-gradient(to right, #3498db, #2ecc71);
+    background: linear-gradient(to right, #2ecc71, #3498db);
     color: #fff;
     padding: 10px 15px;
     border: none;

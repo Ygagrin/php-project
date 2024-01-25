@@ -17,7 +17,7 @@ session_start();
                 <div class="logo"> <a href="index.php"><img src="pictures/icon3.ico" alt="logo"><h2>PeerExchangePlace</h2></a> </div>
                     <ul>
                         <li><a href="index.php">Home</a></li>
-                        <li><a href="about.html">About</a></li>
+                        <!-- <li><a href="about.html">About</a></li> -->
 
                         <?php
                          if (isset($_SESSION['firstname']) && isset($_SESSION['lastname']) && ( $_SESSION['email'] )) {

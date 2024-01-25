@@ -23,7 +23,7 @@ include("connect.php");
                 </form>
                     <ul>
                         <li><a href="index.php">Home</a></li>
-                        <li><a href="about.html">About</a></li>
+                        <!-- <li><a href="about.html">About</a></li> -->
                         <?php
                          if (isset($_SESSION['firstname']) && isset($_SESSION['lastname'] )&& ( $_SESSION['email'] )) {
                             echo'<li><a href="orders.php">My Orders</a></li>';
@@ -51,12 +51,12 @@ include("connect.php");
             if ($result->num_rows > 0) {
                 echo "<h2>Search Results:</h2>";
                 while ($row = $result->fetch_assoc()) {
-                    echo '<div class="product-container">';
-                    echo '<h2><a href="product.php?product_id=' . $row['product_id'] . '">' . $row['product_name'] . '</a></h2>';
-                    echo '<img src="' . $row['product_image'] . '" alt="Product Image">';
-                    echo '<p>Price: $' . $row['price'] . '</p>';
+                    echo '<a href="product.php?product_id=' . $row['product_id'] . '"><div class="product-container"><div class="right">';
+                    echo '<h2>' . $row['product_name'] . '</h2>';
+                    echo '<img class="imageproduct" src="' . $row['product_image'] . '" alt="Product Image"></div>';
+                    echo '<div class="items"><p>Price: $' . $row['price'] . '</p>';
                     echo '<p>Quantity: ' . $row['quantity'] . '</p>';
-                    echo '</div>';
+                    echo '</div></div></a>';
                 }
             } else {
                 echo "<p>No results found for '{$search_query}'</p>";
@@ -67,15 +67,15 @@ include("connect.php");
             $query = "SELECT product_id,product_name, product_image, price, quantity FROM product ORDER BY date DESC";
             $result = $connect->query($query);
 
-            // Check if there are any products in the database
+            
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
-                    echo '<div class="product-container">';
-                    echo '<h2><a href="product.php?product_id=' . $row['product_id'] . '">' . $row['product_name'] . '</a></h2>';                  
-                    echo '<img src="' . $row['product_image'] . '" alt="Product Image">';
-                    echo '<p>Price: $' . $row['price'] . '</p>';
+                    echo '<a href="product.php?product_id=' . $row['product_id'] . '"><div class="product-container"><div class="right">';
+                    echo '<h2>' . $row['product_name'] . '</h2>';                  
+                    echo '<img class="imageproduct" src="' . $row['product_image'] . '" alt="Product Image"></div>';
+                    echo '<div class="items"> <p>Price: $' . $row['price'] . '</p>';
                     echo '<p>Quantity: ' . $row['quantity'] . '</p>';
-                    echo '</div>';
+                    echo '</div></div></a>';
                 }
             } else {
                 echo "No products found.";
