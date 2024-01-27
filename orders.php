@@ -75,7 +75,7 @@ if ($result === false) {
     echo "Error executing query: " . $connect->error;
 } else {
     if ($result->num_rows > 0) {
-        echo '<table border="1">';
+        echo '<div class="table"><table border="1">';
         echo '<tr>';
         echo '<th>Product</th>';
         echo '<th>Seller Email</th>';
@@ -93,7 +93,7 @@ if ($result === false) {
             echo '<td>' . $row['order_date'] . '</td>';
             echo '<td>' . $row['price'] . '</td>';
             echo '<td>' . $row['quantity'] . '</td>';
-            echo '</tr>';
+            echo '</tr></div>';
         }
 
     }else{
